@@ -22,6 +22,41 @@
     margin-bottom: 3rem;
 }
 
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.project-filter {
+    background-color: white;
+    border: 1px solid var(--dark-slate);
+    color: var(--dark-slate);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.project-filter:hover,
+.project-filter.active {
+    background-color: var(--dark-slate);
+    color: white;
+}
+
+.project-filter:focus-visible {
+    outline: 3px solid var(--yellow-accent);
+    outline-offset: 3px;
+}
+
+.projects-empty {
+    color: var(--deep-grey);
+    grid-column: 1 / -1;
+    padding: 3rem;
+    text-align: center;
+}
+
 .project-card {
     background-color: white;
     border: none;
