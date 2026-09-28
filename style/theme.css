@@ -35,6 +35,9 @@
 
 :root[data-theme="dark"] .contact {
     background-color: #30333a;
+    background-image: radial-gradient(rgba(244, 244, 245, 0.18) 0.7px, transparent 0.7px);
+    border-color: #f4f4f5;
+    box-shadow: 7px 7px 0 #101114;
 }
 
 :root[data-theme="dark"] .btn-github {
@@ -51,6 +54,32 @@
 :root[data-theme="dark"] .btn-github:focus-visible {
     outline: 3px solid var(--yellow-accent);
     outline-offset: 3px;
+}
+
+:root[data-theme="dark"] .contact-chapter,
+:root[data-theme="dark"] .contact-baseline {
+    color: #f4f4f5 !important;
+}
+
+:root[data-theme="dark"] .contact-copy p {
+    color: #d8d9de;
+}
+
+:root[data-theme="dark"] .contact-github {
+    background-color: #30333a;
+}
+
+:root[data-theme="dark"] .contact-actions .btn,
+:root[data-theme="dark"] .contact-baseline {
+    border-color: #f4f4f5;
+}
+
+:root[data-theme="dark"] .contact-actions .btn {
+    box-shadow: 4px 4px 0 #101114;
+}
+
+:root[data-theme="dark"] .contact-actions .btn:hover {
+    box-shadow: 1px 1px 0 #101114;
 }
 
 :root[data-theme="dark"] .skills h2,

@@ -59,4 +59,17 @@
     .contact {
         padding: 2rem 1.5rem;
     }
+
+    .contact-layout {
+        align-items: start;
+        grid-template-columns: 1fr;
+    }
+
+    .contact-actions {
+        flex-wrap: wrap;
+    }
+
+    .contact-baseline {
+        flex-direction: column;
+    }
 }

@@ -121,19 +121,103 @@
 }
 
 .contact {
+    background-color: #f8f5e9;
+    background-image: radial-gradient(rgba(29, 30, 34, 0.22) 0.7px, transparent 0.7px);
+    background-size: 6px 6px;
+    border: 2px solid var(--dark-slate);
+    box-shadow: 7px 7px 0 var(--dark-slate);
     margin-bottom: 4rem;
     padding: 3rem;
-    text-align: center;
 }
 
 .contact h2 {
-    margin-bottom: 1rem;
+    font-family: Impact, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(2.8rem, 6vw, 5.25rem);
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    margin: 0;
+    text-transform: uppercase;
 }
 
-.contact p {
+.contact h2 span {
+    color: #bd332b;
+    display: block;
+}
+
+.contact-chapter {
+    color: var(--dark-slate) !important;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.7rem !important;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin: 0 0 1.5rem !important;
+}
+
+.contact-chapter span {
+    color: #bd332b;
+    margin-right: 0.5rem;
+}
+
+.contact-layout {
+    align-items: end;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.contact-copy p {
     color: var(--deep-grey);
     font-size: 1.1rem;
     line-height: 1.8;
-    margin: 0 auto 2rem;
+    margin: 1.25rem 0 0;
     max-width: 650px;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-actions .btn {
+    align-items: center;
+    border: 2px solid var(--dark-slate);
+    border-radius: 0;
+    box-shadow: 4px 4px 0 var(--dark-slate);
+    display: inline-flex;
+    font-family: Impact, "Arial Narrow Bold", sans-serif;
+    font-size: 1.3rem;
+    gap: 1.5rem;
+    justify-content: space-between;
+    letter-spacing: 0.04em;
+    min-width: 140px;
+    padding: 0.8rem 1rem;
+    text-transform: uppercase;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.contact-actions .btn:hover {
+    box-shadow: 1px 1px 0 var(--dark-slate);
+    transform: translate(3px, 3px);
+}
+
+.contact-linkedin {
+    background-color: var(--yellow-accent);
+    color: var(--dark-slate);
+}
+
+.contact-github {
+    background-color: #f8f5e9;
+    color: var(--dark-slate);
+}
+
+.contact-baseline {
+    border-top: 1px solid var(--dark-slate);
+    display: flex;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.65rem;
+    gap: 1rem;
+    justify-content: space-between;
+    letter-spacing: 0.08em;
+    margin-top: 3rem;
+    padding-top: 1rem;
 }
