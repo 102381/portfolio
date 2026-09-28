@@ -31,6 +31,7 @@ const techIcons = {
 };
 
 let lastFocusedElement = null;
+let activeProjectFilter = "all";
 
 const projects = [
   {
@@ -131,7 +132,19 @@ function initProjects() {
 
   projectsGrid.innerHTML = "";
 
-  projects.forEach((project) => {
+  const visibleProjects = projects.filter((project) => {
+    if (activeProjectFilter === "all") {
+      return true;
+    }
+
+    const frontendTech = ["HTML", "CSS", "JavaScript", "TypeScript", "tailwind", "Bootstrap"];
+    const backendTech = ["PHP", "Python", "Docker", "Docker Compose", "Nginx", "CloudFlare"];
+    const technologies = activeProjectFilter === "frontend" ? frontendTech : backendTech;
+
+    return project.technologies.some((technology) => technologies.includes(technology));
+  });
+
+  visibleProjects.forEach((project) => {
     const projectCard = document.createElement("button");
     projectCard.type = "button";
     projectCard.className = "project-card";
@@ -163,10 +176,28 @@ function initProjects() {
     projectsGrid.appendChild(projectCard);
   });
 
-  if (projects.length === 0) {
+  if (visibleProjects.length === 0) {
     projectsGrid.innerHTML =
-      '<div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: #999;"><p>Je hebt nog geen projecten toegevoegd. Voeg projecten toe in script.js</p></div>';
+      '<div class="projects-empty"><p>Er zijn geen projecten in deze categorie.</p></div>';
   }
+}
+
+function initProjectFilters() {
+  const filters = document.querySelectorAll(".project-filter");
+
+  filters.forEach((filter) => {
+    filter.addEventListener("click", () => {
+      activeProjectFilter = filter.dataset.filter;
+
+      filters.forEach((button) => {
+        const isActive = button === filter;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      initProjects();
+    });
+  });
 }
 
 function openProjectModal(project) {
@@ -227,6 +258,7 @@ function closeProjectModal() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initProjects();
+  initProjectFilters();
 
   const modal = document.getElementById("project-modal");
   const closeBtn = document.querySelector(".modal-close");
