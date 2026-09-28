@@ -13,7 +13,6 @@ const techIcons = {
   "devicon-bootstrap-plain",
   tailwind:
   "devicon-tailwindcss-original colored",
-  //dashboard-icons
   Docker:
     "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/docker.svg",
   "Docker Compose":
@@ -50,7 +49,7 @@ const projects = [
       "CloudFlare",
       "Nginx",
     ],
-    image: "images/jellyfin.png",
+    image: "assets/images/jellyfin.png",
     github: "#",
   },
   {
@@ -60,7 +59,7 @@ const projects = [
     fullDescription:
       "Voor mijn eind school project heb ik een multitool dashboard gebouwd waar verschillende tools inzatten een muziek speler, video speler ",
     technologies: ["HTML", "CSS", "JavaScript", "PHP","tailwind"],
-    image: "images/zhou-maindashboard.png",
+    image: "assets/images/zhou-maindashboard.png",
     github: "https://github.com/102381/Zhou-dashboard",
   },
   {
@@ -70,7 +69,7 @@ const projects = [
     fullDescription:
       "Voor mijn stage ben ik kort bezig geweest om in mijn eigen tijd Typescript te leren omdat we voornamelijk daar met Typescript werkten ",
     technologies: ["HTML", "CSS", "TypeScript", "NeoVim"],
-    image: "images/Typescript_banner.jpg",
+    image: "assets/images/Typescript_banner.jpg",
     github: "https://github.com/102381/TypeScript-Journey",
   },
   {
@@ -80,7 +79,7 @@ const projects = [
     fullDescription:
       "verschillende projecten om python te leren en beter te begrijpen. hiermee probeerd ik verschillende beginner projecten maken om de syntax beter te begrijpen mijn beste project uit dit was een discord bot.",
     technologies: ["Python"],
-    image: "images/python.png",
+    image: "assets/images/python.png",
     github: "https://github.com/102381/python_journey",
   },
   {
@@ -90,7 +89,7 @@ const projects = [
     fullDescription:
       "King of the Court is Crud applicatie. een padel tournament waar wij een applicatie voor moesten bouwen waarin mensen zich konden registreren, match info lezen, leadboard uitlezen,gesoorteerd worden in teams. Daarnaast moesten we een een admin system maken waar de speler data kon worden beheerd. ",
     technologies: ["PHP", "CSS", "HTML"],
-    image: "images/KOTC_banner.png",
+    image: "assets/images/KOTC_banner.png",
     github: "https://github.com/IwanDjudaric/King-Of-The-Court",
   },
   {
@@ -100,7 +99,7 @@ const projects = [
     fullDescription:
       "Yume Ramen is een restaurant waarvoor wij een bestel app voor moesten maken waar klanten verschillende gerechten konden kiezen allergieeen aangeven en bestellen het is een php crud applicatie gemaakt voor mijn school vak beroeps.",
     technologies: ["CSS", "PHP"],
-    image: "images/Yume-Ramen-main-banner.png",
+    image: "assets/images/Yume-Ramen-main-banner.png",
     github: "https://github.com/IwanDjudaric/Yume-Ramen",
   },
   {
@@ -109,7 +108,7 @@ const projects = [
     shortDescription:"Een quiz op met 3 verschillende quizes. over onze hobby's",
     fullDescription:"Voor het school vak beroeps moesten wij in groepen een quize app bouwen met een quiz over ons eigen sport of hobby",
     technologies:["HTML","CSS","JavaScript"],
-    image:"images/quizzy.png",
+    image:"assets/images/quizzy.png",
     github:"https://github.com/IwanDjudaric/Quizzy"
   },
   {
@@ -118,7 +117,7 @@ const projects = [
     shortDescription:"een system voor een commerciële ruimtevlucht",
     fullDescription:"systeem voor een commerciële ruimtevlucht. Denk aan  wat reizigers onderweg nodig hebben, maar ook aan wat de ervaring comfortabel,bijzonder en prettig maakt.",
     technologies:["HTML","CSS","JavaScript"],
-    image:"images/MTM-banner.png",
+    image:"assets/images/MTM-banner.png",
     github:"https://github.com/JeaV2/teamblue"
   }
 ];
