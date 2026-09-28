@@ -256,7 +256,51 @@ function closeProjectModal() {
   }
 }
 
+function updateThemeToggle(theme) {
+  document.querySelectorAll(".theme-toggle").forEach((toggle) => {
+    const isDark = theme === "dark";
+    toggle.setAttribute("aria-pressed", String(isDark));
+    toggle.setAttribute(
+      "aria-label",
+      isDark ? "Schakel lichte modus in" : "Schakel donkere modus in",
+    );
+    toggle.innerHTML = `<i class="bi ${
+      isDark ? "bi-sun" : "bi-moon-stars"
+    }" aria-hidden="true"></i>`;
+  });
+}
+
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem("theme", theme);
+  updateThemeToggle(theme);
+}
+
+function getTheme() {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  const theme = getTheme();
+  document.documentElement.dataset.theme = theme;
+  updateThemeToggle(theme);
+
+  document.querySelectorAll(".theme-toggle").forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      setTheme(
+        document.documentElement.dataset.theme === "dark" ? "light" : "dark",
+      );
+    });
+  });
+
   initProjects();
   initProjectFilters();
 

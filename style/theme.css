@@ -1,0 +1,86 @@
+.theme-toggle {
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--yellow-accent);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    height: 38px;
+    justify-content: center;
+    margin-left: 0.5rem;
+    width: 38px;
+}
+
+.theme-toggle:hover {
+    background-color: var(--yellow-accent);
+    color: var(--dark-slate);
+}
+
+.theme-toggle:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+:root[data-theme="dark"] body {
+    background-color: #18191d;
+    color: #e7e8eb;
+}
+
+:root[data-theme="dark"] .skill-card,
+:root[data-theme="dark"] .about,
+:root[data-theme="dark"] .project-card,
+:root[data-theme="dark"] .modal-content {
+    background-color: #25272d;
+}
+
+:root[data-theme="dark"] .contact {
+    background-color: #30333a;
+}
+
+:root[data-theme="dark"] .skills h2,
+:root[data-theme="dark"] .skill-card h3,
+:root[data-theme="dark"] .about h2,
+:root[data-theme="dark"] .contact h2,
+:root[data-theme="dark"] .projects-header h1,
+:root[data-theme="dark"] .project-card h3,
+:root[data-theme="dark"] .project-detail-title,
+:root[data-theme="dark"] .project-detail-tech h4 {
+    color: #f4f4f5;
+}
+
+:root[data-theme="dark"] .skill-card p,
+:root[data-theme="dark"] .about-content p,
+:root[data-theme="dark"] .contact p,
+:root[data-theme="dark"] .projects-header p,
+:root[data-theme="dark"] .project-card p,
+:root[data-theme="dark"] .project-detail-description {
+    color: #d8d9de;
+}
+
+:root[data-theme="dark"] .project-card-image,
+:root[data-theme="dark"] .tech-tag {
+    background-color: #353840;
+}
+
+:root[data-theme="dark"] .project-card-image {
+    border-color: #4b4f58;
+}
+
+:root[data-theme="dark"] .project-card:hover .project-card-image {
+    background-color: #40434c;
+}
+
+:root[data-theme="dark"] .tech-tag {
+    border-color: #565b66;
+    color: #f4f4f5;
+}
+
+:root[data-theme="dark"] .modal-close {
+    color: #e7e8eb;
+}
+
+@media (max-width: 991px) {
+    .theme-toggle {
+        margin: 0.5rem 0 0;
+    }
+}
