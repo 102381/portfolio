@@ -31,6 +31,8 @@ const techIcons = {
 
 };
 
+let lastFocusedElement = null;
+
 const projects = [
   {
     id: 1,
@@ -123,11 +125,19 @@ const projects = [
 
 function initProjects() {
   const projectsGrid = document.getElementById("projects-grid");
+
+  if (!projectsGrid) {
+    return;
+  }
+
   projectsGrid.innerHTML = "";
 
   projects.forEach((project) => {
-    const projectCard = document.createElement("div");
+    const projectCard = document.createElement("button");
+    projectCard.type = "button";
     projectCard.className = "project-card";
+    projectCard.setAttribute("aria-haspopup", "dialog");
+    projectCard.setAttribute("aria-label", `Bekijk details van ${project.title}`);
     projectCard.innerHTML = `
             <div class="project-card-image" style="background-image: url('${project.image}'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
             <div class="project-card-content">
@@ -164,8 +174,14 @@ function openProjectModal(project) {
   const modal = document.getElementById("project-modal");
   const modalBody = document.getElementById("modal-body");
 
+  if (!modal || !modalBody) {
+    return;
+  }
+
+  lastFocusedElement = document.activeElement;
+
   modalBody.innerHTML = `
-        <h2 class="project-detail-title">${project.title}</h2>
+        <h2 id="project-modal-title" class="project-detail-title">${project.title}</h2>
         <p class="project-detail-description">${project.fullDescription}</p>
         <div class="project-detail-tech">
             <h4>Technologieen:</h4>
@@ -185,16 +201,29 @@ function openProjectModal(project) {
             </div>
         </div>
         <div class="project-links">
-            ${project.github !== "#" ? `<a href="${project.github}" class="devicon-github-original " target="_blank"></a>` : ""}
+            ${project.link && project.link !== "#" ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer">Bekijk project</a>` : ""}
+            ${project.github !== "#" ? `<a href="${project.github}" target="_blank" rel="noopener noreferrer" aria-label="Bekijk de GitHub-repository van ${project.title} (opent in een nieuw tabblad)"><i class="devicon-github-original" aria-hidden="true"></i></a>` : ""}
         </div>
     `;
 
   modal.classList.add("active");
+  modal.setAttribute("aria-hidden", "false");
+  document.querySelector(".modal-close").focus();
 }
 
 function closeProjectModal() {
   const modal = document.getElementById("project-modal");
+
+  if (!modal) {
+    return;
+  }
+
   modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
+
+  if (lastFocusedElement instanceof HTMLElement) {
+    lastFocusedElement.focus();
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -212,6 +241,12 @@ document.addEventListener("DOMContentLoaded", () => {
       closeProjectModal();
     }
   });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal?.classList.contains("active")) {
+      closeProjectModal();
+    }
+  });
 });
 
 function addProject(
@@ -221,6 +256,7 @@ function addProject(
   technologies,
   link = "#",
   github = "#",
+  image = "",
 ) {
   const newProject = {
     id: projects.length + 1,
@@ -230,6 +266,7 @@ function addProject(
     technologies,
     link,
     github,
+    image,
   };
   projects.push(newProject);
   initProjects();

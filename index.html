@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ronny Kortekaas - Portfolio</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -26,6 +27,9 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Navigatie openen"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,13 +37,14 @@
           <div class="navbar-nav ms-auto">
             <a class="nav-link active" href="index.html">Home</a>
             <a class="nav-link" href="projects.html">Projecten</a>
+            <a class="nav-link" href="#contact">Contact</a>
           </div>
         </div>
       </div>
     </nav>
 
     <main>
-      <section class="hero">
+      <section class="hero hero--rooftop">
         <div class="container">
           <h1>Hallo, ik ben Ronny</h1>
           <p class="tagline">
@@ -53,8 +58,18 @@
             <a
               href="https://www.linkedin.com/in/ronny-kortekaas-6293513a6/"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Bekijk mijn LinkedIn-profiel (opent in een nieuw tabblad)"
               class="btn btn-secondary btn-icon"
-              ><i class="bi bi-linkedin"></i
+              ><i class="bi bi-linkedin" aria-hidden="true"></i
+            ></a>
+            <a
+              href="https://github.com/102381"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Bekijk mijn GitHub-profiel (opent in een nieuw tabblad)"
+              class="btn btn-secondary btn-icon"
+              ><i class="bi bi-github" aria-hidden="true"></i
             ></a>
           </div>
         </div>
@@ -101,6 +116,31 @@
               het bouwen vind ik samenwerken en goede communiceren belangrijk
               goed begrijpen wat er nodig is en het daarna goed uitwerken.
             </p>
+          </div>
+        </section>
+
+        <section id="contact" class="contact">
+          <h2>Neem contact op</h2>
+          <p>
+            Wil je samenwerken, iets vragen over een project of mijn werk
+            bekijken? Je kunt me bereiken via LinkedIn of mijn code bekijken
+            op GitHub.
+          </p>
+          <div class="cta-buttons">
+            <a
+              href="https://www.linkedin.com/in/ronny-kortekaas-6293513a6/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+              >Stuur een bericht via LinkedIn</a
+            >
+            <a
+              href="https://github.com/102381"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline-dark"
+              >Bekijk GitHub</a
+            >
           </div>
         </section>
       </div>
