@@ -1,0 +1,104 @@
+.projects-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.projects-header h1 {
+    color: var(--dark-slate);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.projects-header p {
+    color: var(--deep-grey);
+    font-size: 1.1rem;
+}
+
+.projects-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-bottom: 3rem;
+}
+
+.project-card {
+    background-color: white;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font: inherit;
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 100%;
+}
+
+.project-card:focus-visible {
+    outline: 3px solid var(--yellow-accent);
+    outline-offset: 3px;
+}
+
+.project-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+}
+
+.project-card-image {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #e0e0e0;
+    height: 150px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.project-card:hover .project-card-image {
+    background-color: #e8e8e8;
+}
+
+.project-card-content {
+    padding: 1.5rem;
+}
+
+.project-card h3 {
+    color: var(--dark-slate);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.project-card p {
+    color: var(--deep-grey);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    color: var(--dark-slate);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+    background-color: var(--yellow-accent);
+    border-color: var(--yellow-accent);
+    color: var(--dark-slate);
+}
+
+.tech-icon {
+    height: 1em;
+    vertical-align: middle;
+    width: 1em;
+}

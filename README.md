@@ -4,7 +4,7 @@ Welkom bij je portfolio! Hier zijn de instructies om je website te gebruiken.
 
 ## Projecten Toevoegen
 
-Open `script.js` en gebruik de `addProject()` functie om projecten toe te voegen.
+Open `scripts/script.js` en gebruik de `addProject()` functie om projecten toe te voegen.
 
 ### Voorbeeld:
 
@@ -16,7 +16,7 @@ addProject(
     ['PHP', 'MySQL', 'CSS', 'JavaScript'],
     'https://mijn-website.nl',
     'https://github.com/ronny/mijn-website',
-    'images/mijn-coole-website.png'
+    'assets/images/mijn-coole-website.png'
 );
 ```
 
@@ -33,8 +33,9 @@ addProject(
 
 - `index.html` - Home pagina
 - `projects.html` - Projecten pagina
-- `style.css` - Alle styling
-- `script.js` - JavaScript logica en projecten array
+- `style/` - Opgesplitste CSS-bestanden
+- `scripts/script.js` - JavaScript logica en projecten array
+- `assets/` - Afbeeldingen en favicon
 - `README.md` - Dit bestand
 
 ## Kleuren
