@@ -1,18 +1,41 @@
 .projects-header {
-    margin-bottom: 3rem;
-    text-align: center;
+    border-bottom: 2px solid var(--dark-slate);
+    margin-bottom: 2rem;
+    padding: 1rem 0 2rem;
 }
 
 .projects-header h1 {
     color: var(--dark-slate);
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-family: Impact, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    line-height: 0.85;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+}
+
+.projects-header h1 span {
+    color: #bd332b;
 }
 
 .projects-header p {
     color: var(--deep-grey);
     font-size: 1.1rem;
+}
+
+.projects-header .project-chapter {
+    color: var(--dark-slate);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 1.5rem;
+}
+
+.project-chapter span {
+    color: #bd332b;
+    margin-right: 0.5rem;
 }
 
 .projects-grid {
@@ -23,26 +46,39 @@
 }
 
 .project-filters {
+    border-bottom: 1px solid var(--dark-slate);
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    justify-content: center;
-    margin-bottom: 2rem;
+    justify-content: flex-start;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
 }
 
 .project-filter {
-    background-color: white;
-    border: 1px solid var(--dark-slate);
+    background-color: #f8f5e9;
+    border: 2px solid var(--dark-slate);
+    border-radius: 0;
+    box-shadow: 3px 3px 0 var(--dark-slate);
     color: var(--dark-slate);
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    transition: all 0.2s ease;
+    font-family: Impact, "Arial Narrow Bold", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    padding: 0.45rem 1rem;
+    text-transform: uppercase;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .project-filter:hover,
 .project-filter.active {
-    background-color: var(--dark-slate);
-    color: white;
+    background-color: var(--yellow-accent);
+    color: var(--dark-slate);
+}
+
+.project-filter:hover {
+    box-shadow: 1px 1px 0 var(--dark-slate);
+    transform: translate(2px, 2px);
 }
 
 .project-filter:focus-visible {
@@ -58,9 +94,9 @@
 }
 
 .project-card {
-    background-color: white;
-    border: none;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #f8f5e9;
+    border: 2px solid var(--dark-slate);
+    box-shadow: 6px 6px 0 var(--dark-slate);
     cursor: pointer;
     font: inherit;
     overflow: hidden;
@@ -76,31 +112,46 @@
 }
 
 .project-card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    transform: translateY(-6px);
+    box-shadow: 10px 10px 0 #bd332b;
+    transform: translate(-3px, -3px);
 }
 
 .project-card-image {
-    background-color: #f0f0f0;
-    border-bottom: 1px solid #e0e0e0;
-    height: 150px;
+    background-color: #dedbd0;
+    background-image: radial-gradient(rgba(29, 30, 34, 0.2) 0.7px, transparent 0.7px);
+    background-size: 6px 6px;
+    border-bottom: 2px solid var(--dark-slate);
+    height: 185px;
+    position: relative;
     transition: background-color 0.3s ease;
     width: 100%;
 }
 
+.project-card-image::after {
+    background-image: radial-gradient(rgba(29, 30, 34, 0.24) 0.7px, transparent 0.7px);
+    background-size: 6px 6px;
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
 .project-card:hover .project-card-image {
-    background-color: #e8e8e8;
+    background-color: #d4d1c6;
 }
 
 .project-card-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
 }
 
 .project-card h3 {
     color: var(--dark-slate);
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-family: Impact, "Arial Narrow Bold", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
     margin-bottom: 0.75rem;
+    text-transform: uppercase;
 }
 
 .project-card p {
@@ -117,10 +168,12 @@
 }
 
 .tech-tag {
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
+    background-color: transparent;
+    border: 1px solid var(--dark-slate);
+    border-radius: 0;
     color: var(--dark-slate);
-    font-size: 0.8rem;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.7rem;
     font-weight: 500;
     padding: 0.25rem 0.75rem;
     transition: all 0.2s ease;
