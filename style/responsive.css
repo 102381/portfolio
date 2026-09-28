@@ -50,6 +50,10 @@
         grid-template-columns: 1fr;
     }
 
+    .projects-header h1 {
+        font-size: clamp(3rem, 15vw, 4.5rem);
+    }
+
     .modal-content {
         margin: 1rem;
         max-width: 90%;

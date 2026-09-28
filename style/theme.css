@@ -107,8 +107,45 @@
     background-color: #353840;
 }
 
+:root[data-theme="dark"] .projects-header,
+:root[data-theme="dark"] .project-filters,
+:root[data-theme="dark"] .project-card,
+:root[data-theme="dark"] .project-card-image,
+:root[data-theme="dark"] .tech-tag {
+    border-color: #f4f4f5;
+}
+
+:root[data-theme="dark"] .projects-header .project-chapter {
+    color: #f4f4f5;
+}
+
+:root[data-theme="dark"] .project-filter {
+    background-color: #25272d;
+    border-color: #f4f4f5;
+    box-shadow: 3px 3px 0 #101114;
+    color: #f4f4f5;
+}
+
+:root[data-theme="dark"] .project-filter:hover,
+:root[data-theme="dark"] .project-filter.active {
+    background-color: var(--yellow-accent);
+    color: var(--dark-slate);
+}
+
+:root[data-theme="dark"] .project-filter:hover {
+    box-shadow: 1px 1px 0 #101114;
+}
+
+:root[data-theme="dark"] .project-card {
+    box-shadow: 6px 6px 0 #101114;
+}
+
+:root[data-theme="dark"] .project-card:hover {
+    box-shadow: 10px 10px 0 #bd332b;
+}
+
 :root[data-theme="dark"] .project-card-image {
-    border-color: #4b4f58;
+    border-color: #f4f4f5;
 }
 
 :root[data-theme="dark"] .project-card:hover .project-card-image {
