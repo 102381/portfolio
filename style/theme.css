@@ -37,6 +37,22 @@
     background-color: #30333a;
 }
 
+:root[data-theme="dark"] .btn-github {
+    border-color: #f4f4f5;
+    color: #f4f4f5;
+}
+
+:root[data-theme="dark"] .btn-github:hover {
+    background-color: var(--yellow-accent);
+    border-color: var(--yellow-accent);
+    color: var(--dark-slate);
+}
+
+:root[data-theme="dark"] .btn-github:focus-visible {
+    outline: 3px solid var(--yellow-accent);
+    outline-offset: 3px;
+}
+
 :root[data-theme="dark"] .skills h2,
 :root[data-theme="dark"] .skill-card h3,
 :root[data-theme="dark"] .about h2,
